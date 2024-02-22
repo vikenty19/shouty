@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Person {
     private Integer location;
+    private String name;
+    public Person(String name_){
+        this.name = name_;
+    }
 
     public void moveTo(int distance){
 

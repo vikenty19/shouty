@@ -8,26 +8,27 @@ import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StepDefinitions {
+    Person lucy = new Person("Lucy");
+    Person sean = new Person("Sean");
 
-    private Person sean;
-    private Person lucy;
     private String messageFromSean;
 
-    @Given("Lucy is located {int} meters from Sean")
+    @Given("Lucy is located/standing {int} meter(s) from Sean")
     public void lucy_is_located_meters_from_sean(Integer distance) {
-       lucy = new Person();
-       sean = new Person();
+        lucy.setLocation(distance);
         lucy.moveTo(distance);
     }
+
     @When("Sean shouts {string}")
     public void sean_shouts(String message) {
-       sean.shout(message);
-      messageFromSean = message;
+        sean.shout(message);
+        messageFromSean = message;
         System.out.println(asList(messageFromSean));
     }
+
     @Then("Lucy heard Sean's message")
     public void lucy_heard_sean_s_message() {
-    assertEquals(asList(messageFromSean),lucy.getMessageHeard());
+        assertEquals(asList(messageFromSean), lucy.getMessageHeard());
         System.out.println(lucy.getMessageHeard());
     }
 
