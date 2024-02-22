@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
+    private Integer location;
+
     public void moveTo(int distance){
 
 
@@ -16,5 +18,9 @@ public class Person {
         result.add("free bagels at Sean's");
 
 return result;
+    }
+    public void setLocation(Integer location){
+        this.location = location;
+
     }
 }
