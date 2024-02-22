@@ -9,4 +9,4 @@ Feature: Hear shout
   Scenario: Listener hears a different message
     Given Lucy is located 1 meter from Sean
     When Sean shouts "Free coffee!"
-    Then Lucy heard Sean's message
+    Then Lucy heard new Sean's message

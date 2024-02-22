@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package io.cucumber.shouty;
 
 import io.cucumber.java.en.Given;
 
