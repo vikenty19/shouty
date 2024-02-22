@@ -29,7 +29,7 @@ public class StepDefinitions {
         System.out.println(person.getName(person));
     }
 
-    @Then("Lucy heard Sean's {message}")
+    @Then("Lucy heard Sean's message")
     public void lucy_heard_sean_s_message() {
         assertEquals(asList(messageFromSean), lucy.getMessageHeard());
         System.out.println(lucy.getMessageHeard());
