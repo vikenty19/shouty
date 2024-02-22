@@ -15,10 +15,9 @@ public class StepDefinitions {
 
     @Given("Lucy is located {int} meters from Sean")
     public void lucy_is_located_meters_from_sean(Integer distance) {
-        lucy = new Person();
-        sean = new Person();
+       lucy = new Person();
+       sean = new Person();
         lucy.moveTo(distance);
- //       throw new io.cucumber.java.PendingException();
     }
     @When("Sean shouts {string}")
     public void sean_shouts(String message) {
