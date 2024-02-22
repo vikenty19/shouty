@@ -13,10 +13,10 @@ public class StepDefinitions {
 
     private String messageFromSean;
 
-    @Given("Lucy is located/standing {int} meter(s) from Sean")
-    public void lucy_is_located_meters_from_sean(Integer distance) {
-        lucy.setLocation(distance);
-        lucy.moveTo(distance);
+    @Given("{person} is located/standing {int} meter(s) from Sean")
+    public void lucy_is_located_meters_from_sean(Person person,Integer distance) {
+        person.setLocation(distance);
+        person.moveTo(distance);
     }
 
     @When("Sean shouts {string}")
