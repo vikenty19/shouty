@@ -24,11 +24,12 @@ public class StepDefinitions {
     public void sean_shouts(String message) {
        sean.shout(message);
       messageFromSean = message;
+        System.out.println(asList(messageFromSean));
     }
     @Then("Lucy heard Sean's message")
     public void lucy_heard_sean_s_message() {
     assertEquals(asList(messageFromSean),lucy.getMessageHeard());
-        throw new io.cucumber.java.PendingException();
+        System.out.println(lucy.getMessageHeard());
     }
 
 }
