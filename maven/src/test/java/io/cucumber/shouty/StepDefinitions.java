@@ -49,11 +49,12 @@ public class StepDefinitions {
 
     @Given("a person named Lucy")
     public void aPersonNamedLucy() {
-
+lucy = new Person(network);
     }
 
     @And("a person named Sean")
     public void aPersonNamedSean() {
+        sean = new Person(network);
 
     }
 }
