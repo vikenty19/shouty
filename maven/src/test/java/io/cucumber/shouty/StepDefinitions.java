@@ -1,6 +1,8 @@
 package io.cucumber.shouty;
 
 
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,10 +11,14 @@ import static java.util.Arrays.asList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StepDefinitions {
-   Person lucy = new Person("Lucy");
-    Person sean = new Person("Sean");
-
+   private Person lucy;
+   private Person sean;
+   private Network network;
     private String messageFromSean;
+    @Before
+    public void createNetwork(){
+        Network network = new Network();
+    }
 
     @Given("{person} is located/standing {int} meter(s) from Sean")
     public void lucy_is_located_meters_from_sean(Person person,Integer distance) {
@@ -39,5 +45,15 @@ public class StepDefinitions {
     public void lucyHeardNewSeanSMessage() {
         assertEquals(asList(messageFromSean), lucy.getNewMessageHeard());
         System.out.println(lucy.getNewMessageHeard());
+    }
+
+    @Given("a person named Lucy")
+    public void aPersonNamedLucy() {
+
+    }
+
+    @And("a person named Sean")
+    public void aPersonNamedSean() {
+
     }
 }
