@@ -4,40 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
-    private final List<String> messagesHeard = new ArrayList<>();
-    private  Network network;
-    private Integer location;
-    private String name;
-    public Person(Network network) {
+    private final List<String> messagesHeard = new ArrayList<String>();
+    private final Network network;
+    private final int location;
+
+    public Person(Network network, int location) {
         this.network = network;
+        this.location = location;
         network.subscribe(this);
     }
 
-
-public String getName(Person person){
-        return this.name;
-
-}
-    public void moveTo(int distance){
-
-
+    public List<String> getMessagesHeard() {
+        return messagesHeard;
     }
 
     public void shout(String message) {
-        network.broadcast(message);
+        network.broadcast(message, getLocation());
     }
-    public void hear(String message){
+
+    public void hear(String message) {
         messagesHeard.add(message);
-
-    }
-    public List<String> getMessageHeard(){
-
-             return messagesHeard;
     }
 
-
-    public void setLocation(Integer location){
-        this.location = location;
-
+    public int getLocation() {
+        return location;
     }
 }
